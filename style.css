@@ -1,0 +1,134 @@
+/* ==== GENERAL ==== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: radial-gradient(circle at left, #a00078, #050b14, #031522);
+    color: yellow;
+}
+
+.container {
+    padding: 30px;
+}
+
+/* ==== TITLE ==== */
+.title {
+    font-size: 32px;
+    font-weight: bold;
+}
+.title span {
+    color: #ffd700;
+}
+
+/* ==== LOGO (POP FIXED) ==== */
+.logo {
+    width: 160px;
+    margin: 20px 0;
+
+    /* Start hidden */
+    opacity: 0;
+    transform: scale(0.4);
+}
+
+/* POP ANIMATION */
+@keyframes pop {
+    0% {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Class added AFTER load by JS */
+.logo.popIn {
+    animation: pop 0.8s ease-out forwards;
+}
+
+/* ==== TEXT ==== */
+.tagline,
+.subtag {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.stars {
+    font-size: 25px;
+    margin: 15px 0 30px;
+}
+
+/* ==== BUTTONS ==== */
+.join-btn {
+    display: inline-block;
+    background: #01aaff;
+    color: white;
+    padding: 18px 30px;
+    font-size: 22px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 3px dashed yellow;
+    margin: 20px 0;
+    transition: 0.2s;
+}
+
+/* Telegram Icon in Buttons */
+.join-btn i {
+    margin-right: 8px;
+    font-size: 22px;
+}
+
+.join-btn:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 15px #00c3ff;
+}
+
+/* Yellow Button */
+.join-btn.yellow {
+    background: yellow;
+    color: black;
+    border-color: red;
+}
+
+.join-btn.yellow:hover {
+    box-shadow: 0 0 15px yellow;
+}
+
+/* Pulse Animation */
+.pulse {
+    animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+/* ==== COUNTDOWN BOX ==== */
+.count-box {
+    width: 260px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    background: #00aaff;
+    border-radius: 20px;
+    color: white;
+}
+
+.count-title {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.count {
+    background: yellow;
+    color: black;
+    font-size: 60px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 20px 0;
+}
