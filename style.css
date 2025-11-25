@@ -1,65 +1,67 @@
 /* ==== GENERAL ==== */
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+body {
     font-family: Arial, sans-serif;
     text-align: center;
     background: radial-gradient(circle at left, #a00078, #050b14, #031522);
     color: yellow;
+    overflow-x: hidden; /* prevent horizontal scroll */
 }
 
 .container {
-    padding: 30px;
+    padding: 20px;
+    max-width: 100%;
 }
 
 /* ==== TITLE ==== */
 .title {
     font-size: 32px;
     font-weight: bold;
+    margin-bottom: 15px;
 }
+
 .title span {
     color: #ffd700;
+    font-size: 28px;
+    display: block;
 }
 
-/* ==== LOGO (POP FIXED) ==== */
+/* ==== LOGO ==== */
 .logo {
     width: 160px;
+    max-width: 80%; /* responsive */
+    height: auto;
     margin: 20px 0;
-
-    /* Start hidden */
     opacity: 0;
     transform: scale(0.4);
 }
 
 /* POP ANIMATION */
 @keyframes pop {
-    0% {
-        transform: scale(0.4);
-        opacity: 0;
-    }
-    60% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+    0% { transform: scale(0.4); opacity: 0; }
+    60% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-/* Class added AFTER load by JS */
 .logo.popIn {
     animation: pop 0.8s ease-out forwards;
 }
 
 /* ==== TEXT ==== */
-.tagline,
-.subtag {
-    font-size: 18px;
+.tagline, .subtag, .bottom {
+    font-size: 16px;
     margin-top: 10px;
+    line-height: 1.4;
+    padding: 0 10px; /* padding for small screens */
 }
 
 .stars {
-    font-size: 25px;
+    font-size: 22px;
     margin: 15px 0 30px;
 }
 
@@ -68,27 +70,27 @@ body {
     display: inline-block;
     background: #01aaff;
     color: white;
-    padding: 18px 30px;
-    font-size: 22px;
+    padding: 15px 25px;
+    font-size: 18px;
     text-decoration: none;
     border-radius: 10px;
     border: 3px dashed yellow;
-    margin: 20px 0;
+    margin: 15px 0;
     transition: 0.2s;
+    max-width: 90%; /* responsive */
+    word-wrap: break-word;
 }
 
-/* Telegram Icon in Buttons */
 .join-btn i {
     margin-right: 8px;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .join-btn:hover {
-    transform: scale(1.06);
-    box-shadow: 0 0 15px #00c3ff;
+    transform: scale(1.05);
+    box-shadow: 0 0 12px #00c3ff;
 }
 
-/* Yellow Button */
 .join-btn.yellow {
     background: yellow;
     color: black;
@@ -96,24 +98,25 @@ body {
 }
 
 .join-btn.yellow:hover {
-    box-shadow: 0 0 15px yellow;
+    box-shadow: 0 0 12px yellow;
 }
 
-/* Pulse Animation */
+/* Pulse animation */
 .pulse {
     animation: pulse 2.5s infinite;
 }
 
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.08); }
+    50% { transform: scale(1.06); }
 }
 
 /* ==== COUNTDOWN BOX ==== */
 .count-box {
-    width: 260px;
-    margin: 0 auto 40px;
-    padding: 20px;
+    width: 90%;
+    max-width: 300px;
+    margin: 20px auto 40px;
+    padding: 15px;
     background: #00aaff;
     border-radius: 20px;
     color: white;
@@ -121,14 +124,24 @@ body {
 
 .count-title {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .count {
     background: yellow;
     color: black;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: bold;
     border-radius: 10px;
-    padding: 20px 0;
+    padding: 15px 0;
+}
+
+/* ==== RESPONSIVE MEDIA QUERIES ==== */
+@media only screen and (max-width: 480px) {
+    .title { font-size: 26px; }
+    .title span { font-size: 22px; }
+    .tagline, .subtag, .bottom { font-size: 14px; }
+    .stars { font-size: 20px; }
+    .join-btn { font-size: 16px; padding: 12px 20px; }
+    .count { font-size: 40px; padding: 12px 0; }
 }

@@ -1,4 +1,4 @@
-// COUNTDOWN
+// Countdown 60 seconds
 let count = 60;
 let box = document.getElementById("countdown");
 
@@ -10,13 +10,10 @@ function countdown() {
 }
 setInterval(countdown, 1000);
 
-
-// LOGO POP FIX
+// Logo pop animation
 window.onload = function () {
     const logo = document.querySelector(".logo");
-
-    // Add animation class AFTER image loads
     setTimeout(() => {
         logo.classList.add("popIn");
-    }, 200); // small delay = perfect timing
+    }, 200);
 };
