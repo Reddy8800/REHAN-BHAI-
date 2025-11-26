@@ -110,3 +110,47 @@ h2 {
     font-size: 14px;
     font-weight: 600;
 }
+/* --- MOBILE RESPONSIVE FIX --- */
+@media (max-width: 480px) {
+
+    .container {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .stat-box {
+        margin: 0;
+        width: 100%;
+    }
+
+    .cta-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .features-box {
+        padding: 18px;
+        width: 100%;
+    }
+
+    /* ALLOW TEXT TO WRAP ON MOBILE */
+    .features-box .feature-item {
+        white-space: normal !important; /* allow text wrap */
+        display: flex; 
+        align-items: start;
+        line-height: 1.4;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+}
