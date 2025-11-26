@@ -15,12 +15,14 @@ body {
     background: rgba(0, 20, 10, 0.7);
     width: 100%;
     max-width: 420px;
-    padding: 30px;
+    padding: 25px;
     border-radius: 25px;
     box-shadow: 0 0 60px rgba(0,255,120,0.1);
     text-align: center;
     backdrop-filter: blur(12px);
+    margin: auto; /* Center the layout */
 }
+
 
 .logo {
     width: 120px;
@@ -90,13 +92,15 @@ h2 {
 .features-box .feature-item {
     font-size: 16px;
     color: white;
-    margin-bottom: 14px;
-    display: flex;               /* let emojis stay left, text wraps */
-    align-items: center;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
     gap: 10px;
-    line-height: 1.5;            /* better readability */
-    flex-wrap: wrap;             /* allows text to wrap inside the box */
+    line-height: 1.4;
+    flex-wrap: wrap;   /* Allows proper mobile wrapping */
+    word-break: break-word;
 }
+
 
 
 
@@ -152,5 +156,51 @@ h2 {
 
     h2 {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        padding: 18px;
+        max-width: 95%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 95px;
+        height: 95px;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stat-box {
+        width: 100%;
+        margin: 0;
+    }
+
+    .cta-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .features-box {
+        padding: 16px;
+    }
+
+    /* HELPS WRAP LONG TEXT ON SMALL MOBILE */
+    .features-box .feature-item {
+        flex-wrap: wrap;
+        white-space: normal !important;
     }
 }
