@@ -8,9 +8,9 @@ body {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    padding: 30px;
 }
 
+/* MAIN CARD */
 .container {
     background: rgba(0, 20, 10, 0.7);
     width: 100%;
@@ -20,10 +20,10 @@ body {
     box-shadow: 0 0 60px rgba(0,255,120,0.1);
     text-align: center;
     backdrop-filter: blur(12px);
-    margin: auto; /* Center the layout */
+    margin: 20px;
 }
 
-
+/* Logo */
 .logo {
     width: 120px;
     height: 120px;
@@ -33,6 +33,7 @@ body {
     box-shadow: 0 0 20px rgba(0,255,120,0.4);
 }
 
+/* Titles */
 h1 {
     font-size: 28px;
     color: #fff;
@@ -45,9 +46,10 @@ h2 {
     margin-top: -5px;
 }
 
+/* Stats Section */
 .stats {
     display: flex;
-    justify-content: space-between;
+    gap: 12px;
     margin-top: 25px;
 }
 
@@ -55,7 +57,6 @@ h2 {
     flex: 1;
     background: rgba(0,60,40,0.4);
     padding: 15px;
-    margin: 0 7px;
     border-radius: 12px;
     box-shadow: 0 0 8px rgba(0,255,120,0.1);
 }
@@ -72,38 +73,30 @@ h2 {
     margin-top: 5px;
 }
 
+/* CTA Button */
 .cta-btn {
+    width: 100%;
     background: linear-gradient(to right, #ffa200, #ff6a00);
     padding: 15px;
     border-radius: 40px;
     margin-top: 30px;
     font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    border: none;
 }
 
-    .features-box {
+/* Features Box */
+.features-box {
     background: rgba(0, 40, 25, 0.85);
     padding: 22px;
     margin-top: 28px;
     border-radius: 18px;
     box-shadow: 0 0 25px rgba(0, 255, 120, 0.15);
-    color: white; /* makes ALL text inside white */
-}
-
-.features-box .feature-item {
-    font-size: 16px;
     color: white;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.4;
-    flex-wrap: wrap;   /* Allows proper mobile wrapping */
-    word-break: break-word;
 }
 
-
-
-
+/* Feature Tag */
 .features-box .tag {
     background: #ff6e2d;
     padding: 6px 14px;
@@ -114,65 +107,34 @@ h2 {
     font-size: 14px;
     font-weight: 600;
 }
-/* --- MOBILE RESPONSIVE FIX --- */
-@media (max-width: 480px) {
 
-    .container {
-    width: 100%;
-    max-width: 420px;   /* keeps desktop nice */
-    padding: 15px;      /* REDUCED padding for mobile */
-    margin: 0 auto;     /* center on all screens */
-    border-radius: 25px;
-    background: rgba(0, 20, 10, 0.7);
-    box-shadow: 0 0 60px rgba(0,255,120,0.1);
+/* Feature Items */
+.features-box .feature-item {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 10px;
+    line-height: 1.4;
+    flex-wrap: wrap;
 }
 
-    .stats {
-        flex-direction: column;
-        gap: 12px;
+
+/* ========== PERFECT MOBILE FIX ========== */
+@media (max-width: 480px) {
+
+    body {
+        padding: 0;
     }
 
-    .stat-box {
-        margin: 0;
-        width: 100%;
-    }
-
-    .cta-btn {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    .features-box {
+    .container {
+        max-width: 92%;
         padding: 18px;
-        width: 100%;
-    }
-
-    /* ALLOW TEXT TO WRAP ON MOBILE */
-    .features-box .feature-item {
-        white-space: normal !important; /* allow text wrap */
-        display: flex; 
-        align-items: start;
-        line-height: 1.4;
+        margin: 12px;
     }
 
     h1 {
         font-size: 22px;
-    }
-
-    h2 {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .container {
-        padding: 18px;
-        max-width: 95%;
-    }
-
-    h1 {
-        font-size: 20px;
     }
 
     h2 {
@@ -184,6 +146,7 @@ h2 {
         height: 95px;
     }
 
+    /* Stats column */
     .stats {
         flex-direction: column;
         gap: 10px;
@@ -194,61 +157,20 @@ h2 {
         margin: 0;
     }
 
+    /* CTA Button */
     .cta-btn {
         font-size: 16px;
         padding: 12px;
     }
 
+    /* Features */
     .features-box {
         padding: 16px;
     }
 
-    /* HELPS WRAP LONG TEXT ON SMALL MOBILE */
     .features-box .feature-item {
-        flex-wrap: wrap;
-        white-space: normal !important;
-    }
-}
-@media (max-width: 480px) {
-
-    body {
-        padding: 0;
-        margin: 0;
-    }
-
-    .container {
-        max-width: 95%;
-        padding: 12px;
-    }
-
-    .stats {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .stat-box {
-        width: 100%;
-    }
-
-    /* Feature Section FIX */
-    .features-box {
-        padding: 14px;
-    }
-
-    .feature-item {
         font-size: 15px;
-        line-height: 1.4;
-        display: flex;
-        align-items: flex-start;
-        gap: 10px;
-        flex-wrap: wrap;       /* MOST IMPORTANT */
         white-space: normal !important;
         word-break: break-word;
-    }
-
-    .cta-btn {
-        width: 100%;
-        padding: 14px;
-        font-size: 17px;
     }
 }
