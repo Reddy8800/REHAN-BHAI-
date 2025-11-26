@@ -1,147 +1,112 @@
-/* ==== GENERAL ==== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: radial-gradient(circle at left, #a00078, #050b14, #031522);
-    color: yellow;
-    overflow-x: hidden; /* prevent horizontal scroll */
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at center, #0a3d2a, #001a12);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 30px;
 }
 
 .container {
-    padding: 20px;
-    max-width: 100%;
+    background: rgba(0, 20, 10, 0.7);
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 60px rgba(0,255,120,0.1);
+    text-align: center;
+    backdrop-filter: blur(12px);
 }
 
-/* ==== TITLE ==== */
-.title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.title span {
-    color: #ffd700;
-    font-size: 28px;
-    display: block;
-}
-
-/* ==== LOGO ==== */
 .logo {
-    width: 160px;
-    max-width: 80%; /* responsive */
-    height: auto;
-    margin: 20px 0;
-    opacity: 0;
-    transform: scale(0.4);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: auto;
+    border: 3px solid lime;
+    box-shadow: 0 0 20px rgba(0,255,120,0.4);
 }
 
-/* POP ANIMATION */
-@keyframes pop {
-    0% { transform: scale(0.4); opacity: 0; }
-    60% { transform: scale(1.2); opacity: 1; }
-    100% { transform: scale(1); opacity: 1; }
+h1 {
+    font-size: 28px;
+    color: #fff;
+    margin-top: 18px;
 }
 
-.logo.popIn {
-    animation: pop 0.8s ease-out forwards;
+h2 {
+    color: #b8ffd7;
+    font-weight: 300;
+    margin-top: -5px;
 }
 
-/* ==== TEXT ==== */
-.tagline, .subtag, .bottom {
-    font-size: 16px;
-    margin-top: 10px;
-    line-height: 1.4;
-    padding: 0 10px; /* padding for small screens */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
 }
 
-.stars {
-    font-size: 22px;
-    margin: 15px 0 30px;
-}
-
-/* ==== BUTTONS ==== */
-.join-btn {
-    display: inline-block;
-    background: #01aaff;
-    color: white;
-    padding: 15px 25px;
-    font-size: 18px;
-    text-decoration: none;
-    border-radius: 10px;
-    border: 3px dashed yellow;
-    margin: 15px 0;
-    transition: 0.2s;
-    max-width: 90%; /* responsive */
-    word-wrap: break-word;
-}
-
-.join-btn i {
-    margin-right: 8px;
-    font-size: 18px;
-}
-
-.join-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 12px #00c3ff;
-}
-
-.join-btn.yellow {
-    background: yellow;
-    color: black;
-    border-color: red;
-}
-
-.join-btn.yellow:hover {
-    box-shadow: 0 0 12px yellow;
-}
-
-/* Pulse animation */
-.pulse {
-    animation: pulse 2.5s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.06); }
-}
-
-/* ==== COUNTDOWN BOX ==== */
-.count-box {
-    width: 90%;
-    max-width: 300px;
-    margin: 20px auto 40px;
+.stat-box {
+    flex: 1;
+    background: rgba(0,60,40,0.4);
     padding: 15px;
-    background: #00aaff;
-    border-radius: 20px;
-    color: white;
+    margin: 0 7px;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0,255,120,0.1);
 }
 
-.count-title {
-    margin-bottom: 10px;
+.stat-title {
+    color: #9affc4;
+    font-size: 14px;
+}
+
+.stat-value {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.cta-btn {
+    background: linear-gradient(to right, #ffa200, #ff6a00);
+    padding: 15px;
+    border-radius: 40px;
+    margin-top: 30px;
     font-size: 18px;
 }
 
-.count {
-    background: yellow;
-    color: black;
-    font-size: 50px;
-    font-weight: bold;
-    border-radius: 10px;
-    padding: 15px 0;
+    .features-box {
+    background: rgba(0, 40, 25, 0.85);
+    padding: 22px;
+    margin-top: 28px;
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(0, 255, 120, 0.15);
+    color: white; /* makes ALL text inside white */
 }
 
-/* ==== RESPONSIVE MEDIA QUERIES ==== */
-@media only screen and (max-width: 480px) {
-    .title { font-size: 26px; }
-    .title span { font-size: 22px; }
-    .tagline, .subtag, .bottom { font-size: 14px; }
-    .stars { font-size: 20px; }
-    .join-btn { font-size: 16px; padding: 12px 20px; }
-    .count { font-size: 40px; padding: 12px 0; }
+.features-box .feature-item {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 14px;
+    display: flex;               /* let emojis stay left, text wraps */
+    align-items: center;
+    gap: 10px;
+    line-height: 1.5;            /* better readability */
+    flex-wrap: wrap;             /* allows text to wrap inside the box */
+}
+
+
+
+.features-box .tag {
+    background: #ff6e2d;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
 }

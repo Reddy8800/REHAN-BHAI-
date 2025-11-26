@@ -1,19 +1,8 @@
-// Countdown 60 seconds
-let count = 60;
-let box = document.getElementById("countdown");
+// ---- UPDATE THESE VALUES ---- //
 
-function countdown() {
-    if (count >= 0) {
-        box.innerHTML = count;
-        count--;
-    }
-}
-setInterval(countdown, 1000);
+document.getElementById("channelLogo").src = "logo.jpg";  
+document.getElementById("channelName").innerText = "REHAN BHAI️™️"; 
+document.getElementById("subscriberCount").innerText = "13,423+";
 
-// Logo pop animation
-window.onload = function () {
-    const logo = document.querySelector(".logo");
-    setTimeout(() => {
-        logo.classList.add("popIn");
-    }, 200);
-};
+// Want auto-fetch subscribers?  
+// Tell me your channel username: @yourchannelname
