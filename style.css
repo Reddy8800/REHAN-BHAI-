@@ -118,9 +118,14 @@ h2 {
 @media (max-width: 480px) {
 
     .container {
-        padding: 20px;
-        max-width: 95%;
-    }
+    width: 100%;
+    max-width: 420px;   /* keeps desktop nice */
+    padding: 15px;      /* REDUCED padding for mobile */
+    margin: 0 auto;     /* center on all screens */
+    border-radius: 25px;
+    background: rgba(0, 20, 10, 0.7);
+    box-shadow: 0 0 60px rgba(0,255,120,0.1);
+}
 
     .stats {
         flex-direction: column;
@@ -202,5 +207,48 @@ h2 {
     .features-box .feature-item {
         flex-wrap: wrap;
         white-space: normal !important;
+    }
+}
+@media (max-width: 480px) {
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        max-width: 95%;
+        padding: 12px;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .stat-box {
+        width: 100%;
+    }
+
+    /* Feature Section FIX */
+    .features-box {
+        padding: 14px;
+    }
+
+    .feature-item {
+        font-size: 15px;
+        line-height: 1.4;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;       /* MOST IMPORTANT */
+        white-space: normal !important;
+        word-break: break-word;
+    }
+
+    .cta-btn {
+        width: 100%;
+        padding: 14px;
+        font-size: 17px;
     }
 }
